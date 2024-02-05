@@ -6,6 +6,10 @@ export class ListCategoryUsecase {
   constructor(private readonly prismaService: PrismaService) {}
 
   async execute(): Promise<FindManyCategoryDto[]> {
-    return this.prismaService.category.findMany();
+    return this.prismaService.category.findMany({
+      include: {
+        books: true,
+      },
+    });
   }
 }

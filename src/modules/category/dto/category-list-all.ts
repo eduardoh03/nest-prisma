@@ -1,10 +1,9 @@
-import { IsOptional } from 'class-validator';
+import { BookCreateDto } from '../../book/dto/book.dto';
 
 export class FindManyCategoryDto {
   id?: number;
   name: string;
   createdAt?: Date;
   updatedAt?: Date;
-  @IsOptional()
-  books?: any;
+  books?: BookCreateDto[];
 }
